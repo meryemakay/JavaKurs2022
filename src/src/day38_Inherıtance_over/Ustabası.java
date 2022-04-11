@@ -27,8 +27,8 @@ public class Ustabası extends Personel{
             System.out.println(yasin.haklar); // Ustabasi haftada birgun ekstra tatil hakkina sahiptir
             System.out.println(yasin.ikramiye); // Isciler Yilda bir ikramiye alir
             System.out.println(yasin.izin); // Tum personel yilda 4 hafta izin kullanabilir
-            yasin.maasHesapla();//
-            yasin.mesai();
+            yasin.maasHesapla();//2880
+            yasin.mesai(); // Ariza varsa Ustabasi ekstra ucret almadan calisir
         /*
             Eger isci olarak ozelliklerini gormek istersek
             Class adini (Data Turu) Isci seceriz
@@ -38,25 +38,28 @@ public class Ustabası extends Personel{
             System.out.println(ahmet.haklar); // Isciler Kidem tazminati alirlar
             System.out.println(ahmet.ikramiye); // Isciler Yilda bir ikramiye alir
             System.out.println(ahmet.izin); // // Tum personel yilda 4 hafta izin kullanabilir
-            ahmet.maasHesapla(); //
-            ahmet.mesai();
+            ahmet.maasHesapla(); //2880
+            ahmet.mesai();// Ariza varsa Ustabasi ekstra ucret almadan calisir
         /*
         Siz bir objeyi hangi class'dan tanimlarsaniz o class'a ait ozelliklere sahip olur
          */
-            Personel adem=new Ustabasi();//baslngıc noktası personel class ı dır
+            Personel adem=new Ustabasi();//baslngıc noktası personel class ı dır. cunku data turu personel
             System.out.println(adem.statu); // personel
             System.out.println(adem.haklar); // Tum personel esit haklara sahiptir
             //System.out.println(adem.ikramiye); // CTE verir cunku personel classt ıkrmıye yok.
             System.out.println(adem.izin); // // Tum personel yilda 4 hafta izin kullanabilir
-            adem.maasHesapla();
-            adem.mesai();
+            adem.maasHesapla();//2880
+            adem.mesai();// Ariza varsa Ustabasi ekstra ucret almadan calisir
         /*
-        Personel adem=new Ustabasi(); Bu bir Ustabasi objesidir
+        Personel adem=new Ustabasi(); Bu bir Ustabasi objesidir /data turu personle . bır personel olarak ademı gormek ıstıyoruz
         Ustabasi 30 gun * 8 saat * 12 euro = 2880 Euro maas alir
         Ariza varsa Ustabasi ekstra ucret almadan calisir
 
         Personel adem=new Personel(); Bu Personel objesidir
+
          */
+
+//!!! List <Strıng> liste=new Arraylıst<>() aslında burada arraylıst in list ozellıklerını kullanırız..
 
 
         /*

@@ -1,9 +1,10 @@
 package src.day36Inheritance;
 
 public class Child extends Parent {
-
+//!!! obje olusturuluyorsa cont kullnmak zorundayiz
 
     Child() {
+        //ilk satira baska bir cont olusturrusak super() yok olur
     super(); //chıld olunca super() vardır gorsek de gormesek de
         System.out.println("Chıld cons calıstı");
 
