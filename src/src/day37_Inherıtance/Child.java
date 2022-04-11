@@ -1,6 +1,7 @@
 package src.day37_Inherıtance;
-
+/*
 import day36Inheritance.Parent;
+
 
 public class Child extends Parent {
     // bir class'i child class yaptigimizda
@@ -26,7 +27,7 @@ public class Child extends Parent {
     public static void main(String[] args) {
         Child child=new Child(5,8);
     }
+*/
 
-    }
 
 
