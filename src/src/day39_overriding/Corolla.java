@@ -54,9 +54,13 @@ public class Corolla extends Toyota{
         System.out.println(arb2.sirketMerkezi); // Toyota
         // System.out.println(arb2.model); //CTE
 
-        arb2.motor(); // Corolla data turu toyota
-        arb2.garanti(); // Toyota
-        arb2.yakitTuketimi(); // Corolla
+        arb2.motor(); // Corolla ,data turu toyota old ıcın toyota classına bakar
+                       // once ama once motor corolla da overrıde edılmıs mı ona bakar
+        arb2.garanti(); // Toyota, önce toyota ya bakacak sonra chıld de arar garantı methodunu
+                           //yoksa ordakı calısır
+        arb2.yakitTuketimi(); // Corolla, toyota da baktı sonra araba classına bakar. ama eger
+                            // overrıde edılmıs mı dıye bakar corolla da varsa ordakını calıstırdı
+
         // arb2.vitesSayisi(); data turu olan Toyota'dan
         // baslayinca boyle bir method bulamadik
         // dolayisiyla CTE
@@ -66,11 +70,13 @@ public class Corolla extends Toyota{
         System.out.println(arb3.hiz); // Araba    "   "
         System.out.println(arb3.yakit); // Araba   "
         System.out.println(arb3.marka); // Araba    "
+
         //System.out.println(arb3.sirketMerkezi); // CTE cunku Corolla clasında var bu verı
         //System.out.println(arb3.model); //CTE
 
-        arb3.yakitTuketimi(); // Corolla
-        arb3.motor(); // Corolla
+        arb3.yakitTuketimi(); // Corolla class ı overrıd ettıgı ıcın bu classtakı methodu calıstırdı
+        arb3.motor(); // Corolladkını calıstırdı . e
+
 
         // arb3.garanti() ; // CTE aramaya Araba class'indan basladi ve method'u bulamadi
         // arb3.vitesSayisi(); // CTE

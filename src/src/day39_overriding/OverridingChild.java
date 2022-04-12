@@ -31,7 +31,7 @@ public class OverridingChild extends  OverridingParent{
         Ancak
         Method'lar icin Data turunun oldugu class'daki method
         Child class tarafindan OVERRIDE edilmis mi diye kontrol etmemiz gerekir
-        Eger child class'larda bumethod override edilmisse
+        Eger child class'larda bu method override edilmisse
         override eden method calisir
          */
         OverridingParent obj2= new OverridingChild();
