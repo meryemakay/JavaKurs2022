@@ -24,6 +24,8 @@ public class C04_ArraydenTekrarlariSilme {
         }
         System.out.println("set arr : " + benzersizSet);
 
+
+        //////*****
         // Set'de index yapisi yoktur, dolayisiyla forLoop kullanamayiz
 
         Integer arrBenzersiz[]=new Integer[benzersizSet.size()];
@@ -32,6 +34,9 @@ public class C04_ArraydenTekrarlariSilme {
         ) {
             arrBenzersiz[index]=each;
             index++;
+
+
+
         }
         return arrBenzersiz;
     }
