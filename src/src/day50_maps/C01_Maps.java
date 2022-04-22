@@ -6,85 +6,80 @@ import java.util.*;
 
 public class C01_Maps {
     public static void main(String[] args) {
-        //sınıftakı ogrencı lıstesını duzenlı olarak yazdıralım
+        {
+            // siniftaki ogrenci listesini duzenli olarak yazdiralim
 
-        Map<Integer, String> sınıflıst = MapOlustur.myMap();
-        System.out.println(sınıflıst);//{101=Ali, Can, Dev, 102=Veli, Yan, QA, 103=Ali, Yan, C#}
+            Map<Integer,String> sinifListMap= MapOlustur.myMap();
+            System.out.println(sinifListMap);
 
-/*eger key lere tek tek ulsmk ıstersek
- ındeks yapısına ıhtıycımız var
- ancak map ındexyapısını desteklemez
- bunun ıcın key lerı once set e
- sonra da set ın tum elemnlarını bır lıst e ekledık
-       */
-
-
-        Set<Integer> sınıfKeySeti = sınıflıst.keySet();
-        List<Integer> keyList = new ArrayList<>();
-        keyList.addAll(sınıfKeySeti);
-
-        /*
-        List<Integer> keyList = new ArrayList<>();
-        keyList.addAll(sinifList.keySet());
+        /* Eger key'lere tek tek ulasmak istersek
+           index yapisina ihtiyacimiz var
+           ancak map index yapisini desteklemez
+           bunun icin key'leri once bir set'e
+           sonra da set'in tum elementlerini bir list'e ekledik
          */
 
+            Set<Integer> sinifKeySeti = sinifListMap.keySet();
 
-        System.out.println(keyList);//[101, 102, 103]
+            List<Integer> keyList=new ArrayList<>();
+            keyList.addAll(sinifKeySeti);
 
-        System.out.println(keyList.get(1));//102
+            // Simdi de value'leri index ile ulasabilecegimiz bir sekle sokalim
 
-        System.out.println(keyList.get(2));//103
+            Collection<String> sinifValueColl =sinifListMap.values();
+            System.out.println(sinifValueColl);
 
-/*!!!!dene
-Map<Integer, String> sinifList = MapOlustur.myMap();
-List<Integer> sinifKeyList = new ArrayList<>();
-sinifKeyList.addAll(sinifList.keySet());
-System.out.println(sinifKeyList);
+            List<String> sinifValueList=new ArrayList<>();
+            sinifValueList.addAll(sinifValueColl);
 
-**
-LinkedList<Integer> sinifKeyList= (LinkedList<Integer>) sinifList.keySet();
-sinifKeyList.get(1);
- */
+            System.out.println(sinifValueList);
 
+        /* her bir value birden fazla bilgiyi iceriyor
+          onun icin value'leri multidimensional bir array'e atmak mantikli duruyor
+          ancak MDA olusturmak icin boyutlari bilmeye ihtiyacimiz var
 
-//sımdı de value lerı ındex ıle ulasabılecek bır sekle sokalım
-
-        Collection<String> sınıfvalueColl = sınıflıst.values();
-        System.out.println(sınıfvalueColl);//[Ali, Can, Dev, Veli, Yan, QA, Ali, Yan, C#]
-        System.out.println(sınıfvalueColl.size());//3
-
-        List<String> sınıfValueList = new ArrayList<>();
-        sınıfValueList.addAll(sınıfvalueColl);
-        System.out.println(sınıfValueList);//[Ali, Can, Dev, Veli, Yan, QA, Ali, Yan, C#]
-
-        /*her bır value bırden fazla bılgıyı ıcerıyor
-        onun ıcın valuelrı mult. array e atamak mantklı duruyır
-        ancak Md olsturmk ıcın boyutlrı bılmek lzm
          */
-        int outurArrayBoyut = sınıfValueList.size();
 
-        System.out.println(outurArrayBoyut);//3
-
-        //inner arry lerın buyutunu blmak daha komplex
-        String ilkValue = sınıfValueList.get(0);
-
-        System.out.println(ilkValue);//Ali, Can, Dev
-
-        String ilkVlueArray[] = ilkValue.split(", ");
-        int innerArrayBoyut = ilkVlueArray.length;
-
-        String valueMDarr[][]=new  String[outurArrayBoyut][innerArrayBoyut];
-
-        for (int i = 0; i <outurArrayBoyut ; i++) {
-            for (int j = 0; j < innerArrayBoyut; j++) {
-                sınıfValueList.get(i).split(", ");
+            int outerArrayBoyut= sinifValueList.size();
 
 
+            // inner array'lerin boyutunu bulmak biraz daha kompleks olacak
 
+            String ilkValue=sinifValueList.get(0);
+            System.out.println(ilkValue);
+            String ilkValueArray[]=ilkValue.split(", ");
+            int innerArrayBoyut=ilkValueArray.length;
+
+
+            String valueMDArr[][]=new String[outerArrayBoyut][innerArrayBoyut];
+
+            for (int i = 0; i <outerArrayBoyut ; i++) {
+                String temp[]=sinifValueList.get(i).split(", ");
+                for (int j = 0; j <innerArrayBoyut ; j++) {
+
+                    valueMDArr[i][j]=temp[j];
+
+
+                }
 
             }
-        }
 
+            // bu satira kadar key'leri index ile ulasabildigim keyList' e atadim
+            // value'leri valueMDArr'e atadim
+            // simdi bu key ve value'leri istedigim gibi manuple edebilirim
+
+            System.out.println("Numara  Isim   Soyisim  Brans");
+            System.out.println("=============================");
+            for (int i = 0; i <keyList.size() ; i++) {
+                System.out.print( keyList.get(i)+ "   ");
+                for (int j = 0; j < innerArrayBoyut; j++) {
+                    System.out.print(valueMDArr[i][j] + "   ");
+                }
+
+                System.out.println("");
+            }
+
+        }
     }
 }
 
