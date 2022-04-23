@@ -17,7 +17,8 @@ public class C02_IstenenElementlerıLıstele {
         Map<Integer,String> sinifMap=  MapOlustur.myMap();
         String istenenDil="Dev";
         List<String> istenenDiliBilenlerListesi = istenenDiliBilenListesiOlustur(sinifMap,istenenDil);
-        System.out.println(istenenDiliBilenlerListesi);
+        System.out.println(istenenDiliBilenlerListesi);//[Ali]
+
     }
     public static List<String> istenenDiliBilenListesiOlustur(Map<Integer, String> sinifMap, String istenenDil) {
         List<String> istenenDiliBilenlerListesi = new ArrayList<>();
@@ -29,13 +30,16 @@ public class C02_IstenenElementlerıLıstele {
         String ilkValueArray[]=ilkValue.split(", ");
         int innerArrayBoyut=ilkValueArray.length;
         String valueMDArr[][]=new String[outerArrayBoyut][innerArrayBoyut];
+
+
         for (int i = 0; i <outerArrayBoyut ; i++) {
             String temp[]=sinifValueList.get(i).split(", ");
             for (int j = 0; j <innerArrayBoyut ; j++) {
                 valueMDArr[i][j]=temp[j];
             }
         }
-        System.out.println(Arrays.deepToString(valueMDArr));
+        System.out.println(Arrays.deepToString(valueMDArr));//[[Ali, Can, Dev, 1453], [Veli, Yan, QA, 1990], [Ali, Yan, C#, 2000], [Ali, san, C#, 2000], [Ali, kan, C#, 2006], [Ali, pan, C#, 2009]]
+
         for (int i = 0; i <outerArrayBoyut ; i++) {
             if (valueMDArr[i][2].equals(istenenDil)){
                 istenenDiliBilenlerListesi.add(valueMDArr[i][0]);
