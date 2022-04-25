@@ -15,8 +15,12 @@ public class C01_iterator {
         liste.add(6);
         liste.add(9);
         System.out.println(liste); // [5, 7, 8, 6, 9]
+
+
         Iterator itr =  liste.iterator(); // iterator methodunu olusturdugumuz liste objesi
         // uzerinden ArrayList class'indan calistiriyoruz
+
+
 
 
 
